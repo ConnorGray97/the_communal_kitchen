@@ -1,0 +1,32 @@
+.nav-wrapper {
+    font-family: 'Prata', serif;
+    padding-left: 10px;
+}
+
+h3 {
+    font-family: 'Prata', serif;
+    font-size: 45px;
+    padding-top: 30px;
+}
+
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+h1 {
+    font-family: 'Prata', serif;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.main-background {
+    min-height: 90vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0)), url('../images/teodor-skrebnev-DcIZJsskTfg-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    
+}
