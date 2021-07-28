@@ -18,7 +18,7 @@ h4 {
 h1 {
     font-family: 'Prata', serif;
     opacity: 0.9;
-    text-align: center
+    text-align: center;
 }
 
 .main-background {
@@ -29,4 +29,12 @@ h1 {
     background-position: center;
     background-size: cover;
     
+}
+
+.flashes h4 {
+    line-height: 3;
+    text-align: center;
+    width: 500px;
+    margin: auto;
+    margin-top: 20px;
 }
