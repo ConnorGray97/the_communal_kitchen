@@ -22,10 +22,9 @@ h1 {
 }
 
 .main-background {
-    min-height: 90vh;
+    min-height: 70vh;
     background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0)), url('../images/teodor-skrebnev-DcIZJsskTfg-unsplash.jpg');
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-position: center;
     background-size: cover;
     
@@ -37,4 +36,14 @@ h1 {
     width: 500px;
     margin: auto;
     margin-top: 20px;
+}
+
+span {
+    font-family: 'Prata', serif;
+    font-weight: bold;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
 }

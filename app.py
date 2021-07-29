@@ -5,6 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_paginate import Pagination, get_page_args
 if os.path.exists("env.py"):
     import env
 
@@ -16,6 +17,8 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+RECIPES_PER_PAGE = 6
+
 
 @app.route("/")
 @app.route("/get_recipes")
@@ -23,6 +26,8 @@ def get_recipes():
     recipes = mongo.db.recipes.find()
     return render_template("recipes.html", recipes=recipes)
 
+
+# -----Some of the code has been adapted from the task manager project
 # ----------------------------------- Register Functionality
 
 
@@ -90,6 +95,9 @@ def profile(username):
         return render_template("profile.html", username=username)
 
     return redirect(url_for("login"))
+
+
+# ----------------------------------- Log Out Functionality
 
 
 @app.route("/logout")
