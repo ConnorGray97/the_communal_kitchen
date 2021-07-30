@@ -113,6 +113,53 @@ def open_recipe(recipe_id):
                            prep_steps=prep_steps)
 
 
+# ----------------------------------- Add Recipe Functionality
+
+
+@app.route("/add_recipe", methods=["GET", "POST"])
+def add_recipe():
+
+    if request.method == "POST":
+        # retrieve data from add recipe form
+        ingredient_names = request.form.getlist("ingredient_name")
+        amounts = request.form.getlist("amount")
+        units = request.form.getlist("unit")
+        ingredient = [None] * len(ingredient_names)
+        ingredients = []
+        # add to array
+
+        for i in range(len(ingredient_names)):
+
+            ingredient[i] = {
+                "ingredient_name": ingredient_names[i],
+                "amount": amounts[i],
+                "unit": units[i]
+            }
+
+            ingredients.append(ingredients[i])
+
+        prep_steps = request.form.getlist("prep_step")
+
+        recipe = {
+            "username": session["user"],
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_description": request.form.get("recipe_description"),
+            "category_name": request.form.get("category_name"),
+            "ingredients": ingredients,
+            "prep_steps": prep_steps,
+            "image_url": request.form.get("image_url")
+        }
+
+        # add data to db
+        mongo.db.recipes.insert_one(recipe)
+        flash("Your new recipe had been added to your profile.")
+        # redirect to profile
+        return redirect(url_for("profile"))
+
+    categories = mongo.db.categories.find()
+    return render_template("add_recipe.html", categories=categories)
+
+
 @app.route("/logout")
 def logout():
     # remove user from session

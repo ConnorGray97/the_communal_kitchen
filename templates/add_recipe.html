@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col l12">
+            <h2 class="blue-grey-text text-darken-4 center-align">Share with the community</h2>
+        </div>
+    </div>
+    <div class="row new-recipe">
+        <form method="POST" action="{{ url_for('add_recipe') }}" class="col card-panel m12 l10 offset-l1">
+            <!-- Recipe name input -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="recipe_name" id="recipe_name" maxlength="100" type="text">
+                    <label for="recipe_name">Recipe Name</label>
+                </div>
+            </div>
+            <!-- Recipe name input -->
+            <!-- Recipe category input -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <select name="category_name" id="category_name">
+                        <option value="" disabled selected>Pick Category</option>
+                        {% for category in categories %}
+                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="category_name">Recipe Category</label>
+                </div>
+            </div>
+            <!-- Recipe category input -->
+            <!-- Add recipe description -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea name="recipe_description" id="recipe_description" maxlength="300"></textarea>
+                    <label for="recipe_description">Describe Your Recipe</label>
+                </div>
+            </div>
+            <!-- Add recipe description -->
+            <!-- Add image url -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="image_url" id="image_url" type="text">
+                    <label for="image_url">Paste the image URL</label>
+                </div>
+            </div>
+            <!-- Add image url -->
+            <!-- Add ingredient list -->
+            <div class="row">
+                <div class="input-field col s12 m8 l8">
+                    <input id="ingredient_name_1" name="ingredient_name" type="text" maxlength="100">
+                    <label for="ingredient_name_1">Ingredient</label>
+                </div>
+                <!-- Amount -->
+                <div class="input-field col s4 m1 l1">
+                    <input id="amount_1" type="text" maxlength="10">
+                    <label for="amount_1">Enter Amount</label>
+                </div>
+                <!-- Unit -->
+                <div class="input-field col s4 m1 l1">
+                    <input id="unit_1" type="text" maxlength="10">
+                    <label for="unit_1">Please specify the unit</label>
+                </div>
+                <!-- Delete Button -->
+                <div class="col s2 m1 l1">
+                    <button type="button" class="delete btn-floating btn-small red">
+                        <i class="material-icons">Delete</i>
+                    </button>
+                </div>
+                <!-- Add Button -->
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <button id="add-ingredient" class="btn" type="button">Add Ingredient
+                            <i class="material-icons right">Add</i>
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- Add ingredient list -->
+            <!-- Add Prep Steps -->
+            <div class="row prep-step recipe-item">
+                <div class="col s10 m11 l11">
+                    <div class="input-field prep_step col s12">
+                        <textarea name="prep_step" id="prep_step_1" maxlength="500"></textarea>
+                        <label for="prep_step_1">Enter Preparation Step</label>
+                    </div>
+                </div>
+                <div class="col s1 m1 l1">
+                    <button type="button" class="delete btn-floating btn-small red">
+                        <i class="material-icons">Delete</i>
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button class="btn" id="add-step" type="button">Add step
+                        <i class="material-icons right">Add</i>
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <br>
+                    <button class="btn" type="submit">Add Recipe
+                        <i class="material-icons right">sned</i>
+                    </button>
+                    <p>Added recipes will automatically be added to your profile.</p>
+                </div>
+            </div>
+            <!-- Add Prep Steps -->
+            
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}
