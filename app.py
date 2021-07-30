@@ -100,6 +100,19 @@ def profile(username):
 # ----------------------------------- Log Out Functionality
 
 
+@app.route("/open_recipe/<recipe_id>")
+def open_recipe(recipe_id):
+    # Gets open_recipe data
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    ingredients = recipe['ingredients']
+    prep_steps = recipe['prep_steps']
+
+    return render_template("open_recipe.html",
+                           recipe=recipe,
+                           ingredients=ingredients,
+                           prep_steps=prep_steps)
+
+
 @app.route("/logout")
 def logout():
     # remove user from session
