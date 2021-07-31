@@ -1,7 +1,8 @@
 /* ------------------------------------Nav */
 .nav-wrapper {
     font-family: 'Prata', serif;
-    padding-left: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 /* ------------------------------------Nav */
 
@@ -128,4 +129,21 @@ th {
         font-size: 12px;
         line-height: 20px;
     }
+}
+
+/* ------------------------------------Add recipes page */
+
+.input-field {
+    padding: 5px;
+    font-family: 'Prata', serif;
+    border: none;
+    text-decoration: none;
+}
+
+h2 {
+    font-family: 'Prata', serif;
+}
+
+form {
+    padding: 20px;
 }

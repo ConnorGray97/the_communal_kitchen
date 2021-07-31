@@ -159,6 +159,8 @@ def add_recipe():
     categories = mongo.db.categories.find()
     return render_template("add_recipe.html", categories=categories)
 
+# ----------------------------------- Categories
+
 
 @app.route("/logout")
 def logout():

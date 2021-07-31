@@ -8,11 +8,12 @@
         </div>
     </div>
     <div class="row new-recipe">
-        <form method="POST" action="{{ url_for('add_recipe') }}" class="col card-panel m12 l10 offset-l1">
+        <form method="POST" action="{{ url_for('add_recipe') }}" class="recipe-form col card-panel m12 l10 offset-l1">
             <!-- Recipe name input -->
             <div class="row">
                 <div class="input-field col s12">
-                    <input name="recipe_name" id="recipe_name" maxlength="100" type="text">
+                    <i class="fa-pencil alt prefix form-icon"></i>
+                    <input name="recipe_name" id="recipe_name" maxlength="100" type="text" class="validate" required>
                     <label for="recipe_name">Recipe Name</label>
                 </div>
             </div>
@@ -20,7 +21,8 @@
             <!-- Recipe category input -->
             <div class="row">
                 <div class="input-field col s12">
-                    <select name="category_name" id="category_name">
+                    <i class="fas fa-folder-open prefix form-icon"></i>
+                    <select name="category_name" id="category_name" class="validate" required>
                         <option value="" disabled selected>Pick Category</option>
                         {% for category in categories %}
                         <option value="{{ category.category_name }}">{{ category.category_name }}</option>
@@ -33,7 +35,8 @@
             <!-- Add recipe description -->
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea name="recipe_description" id="recipe_description" maxlength="300"></textarea>
+                    <i class="fas fa-folder-open prefix form-icon"></i>
+                    <textarea name="recipe_description" id="recipe_description" maxlength="300" class="validate" required></textarea>
                     <label for="recipe_description">Describe Your Recipe</label>
                 </div>
             </div>
@@ -41,7 +44,8 @@
             <!-- Add image url -->
             <div class="row">
                 <div class="input-field col s12">
-                    <input name="image_url" id="image_url" type="text">
+                    <i class="far fa-image prefix form-icon"></i>
+                    <input name="image_url" id="image_url" type="url" class="validate" pattern="https?://.+" required>
                     <label for="image_url">Paste the image URL</label>
                 </div>
             </div>
@@ -53,20 +57,14 @@
                     <label for="ingredient_name_1">Ingredient</label>
                 </div>
                 <!-- Amount -->
-                <div class="input-field col s4 m1 l1">
+                <div class="input-field col s4 m1 l2 right">
                     <input id="amount_1" type="text" maxlength="10">
-                    <label for="amount_1">Enter Amount</label>
+                    <label for="amount_1">Amount</label>
                 </div>
                 <!-- Unit -->
-                <div class="input-field col s4 m1 l1">
+                <div class="input-field col s4 m1 l2 right">
                     <input id="unit_1" type="text" maxlength="10">
-                    <label for="unit_1">Please specify the unit</label>
-                </div>
-                <!-- Delete Button -->
-                <div class="col s2 m1 l1">
-                    <button type="button" class="delete btn-floating btn-small red">
-                        <i class="material-icons">Delete</i>
-                    </button>
+                    <label for="unit_1">Unit</label>
                 </div>
                 <!-- Add Button -->
                 <div class="row">
@@ -81,16 +79,11 @@
             <!-- Add ingredient list -->
             <!-- Add Prep Steps -->
             <div class="row prep-step recipe-item">
-                <div class="col s10 m11 l11">
+                <div class="col s12 m12 l12">
                     <div class="input-field prep_step col s12">
                         <textarea name="prep_step" id="prep_step_1" maxlength="500"></textarea>
                         <label for="prep_step_1">Enter Preparation Step</label>
                     </div>
-                </div>
-                <div class="col s1 m1 l1">
-                    <button type="button" class="delete btn-floating btn-small red">
-                        <i class="material-icons">Delete</i>
-                    </button>
                 </div>
             </div>
             <div class="row">
