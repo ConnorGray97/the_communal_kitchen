@@ -159,7 +159,62 @@ def add_recipe():
     categories = mongo.db.categories.find()
     return render_template("add_recipe.html", categories=categories)
 
-# ----------------------------------- Categories
+# ----------------------------------- Search Functionality
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    if request.method == "POST":
+        query = f".*{request.form.get('recipe_search')}.*"
+        search = request.form.get('recipe_search')
+        category = request.form.get('category_filter')
+        current_site = request.form.get("search_site")
+
+    if category is None:
+
+        recipes = list(mongo.db.recipes.find({
+                        "$or": [
+                            {"ingredients":
+                                {"$elemMatch":
+                                    {"ingredient_name":
+                                        {"$regex": query,
+                                         "$options": 'i'}}}},
+
+                            {"recipe_name":
+                                {"$regex": query, "$options": 'i'}}
+                            ]
+                        }))
+
+    else:
+
+        recipes = list(mongo.db.recipes.find({
+                        "$and": [
+                                {"category_name": category},
+                                {"$for": [
+                                         {"ingredients":
+                                             {"$elemMatch":
+                                                 {"ingredient_name":
+                                                     {"$regex": query,
+                                                      "$options": 'i'}}}},
+
+                                         {"recipe_name": {"$regex": query,
+                                          "$options": 'i'}}
+                                         ]}
+                                 ]
+                         }))
+
+    categories = mongo.db.categories.find()
+
+    if len(recipes) < 1:
+        flash("No recipes found")
+
+    if current_site == "recipes.html":
+        return render_template(current_site, recipes=recipes,
+                               categories=categories, search=search)
+
+    if current_site == "profile.html":
+        return render_template(current_site, recipes=recipes,
+                               categories=categories, search=search)
 
 
 @app.route("/logout")
