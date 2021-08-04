@@ -41,7 +41,7 @@
             </div>
         </nav>
     <!-- Mobile Side Navbar -->
-        <ul class="sidenav" id="mobile-demo">
+        <ul class="sidenav center-align" id="mobile-demo">
             <li><a href="{{ url_for('get_recipes') }}">Community Recipes</a></li>
             {% if session.user %}
             <li><a href="{{ url_for('profile', username=session['user']) }}">My Recipes</a></li>
@@ -70,6 +70,14 @@
     {% block content %}
     {% endblock %}
 </main>
+
+<footer class="blue-grey darken-4">
+    <div class="row">
+        <div class="footer-contents">
+            <h5>The Communal Kitchen</h5>
+        </div>
+    </div>
+</footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

@@ -5,6 +5,15 @@
     padding-right: 20px;
 }
 
+.sidenav {
+    font-family: 'Prata', serif;
+}
+
+.sidenav li {
+    padding: 20px;
+    color: aliceblue;
+}
+
 /* ------------------------------------Nav */
 
 /* ------------------------------------Log in / Register */
@@ -78,6 +87,7 @@ p {
 .card .card-image img {
     object-fit: cover;
     height: 20rem;
+   
 }
 /* ------------------------------------Community recipes page */
 
@@ -147,4 +157,18 @@ th {
 
 h2 {
     font-family: 'Prata', serif;
+}
+
+.new-recipe {
+    margin: 20px;
+}
+
+form {
+    padding: 30px;
+}
+
+/* ------------------------------------Footer */
+
+footer {
+    height: 400px;
 }
