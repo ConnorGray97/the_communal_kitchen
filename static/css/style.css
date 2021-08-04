@@ -172,3 +172,44 @@ form {
 footer {
     height: 400px;
 }
+
+.footer-title h5 {
+    font-family: 'Prata', serif;
+    padding: 15px;
+    width: 320px;
+    position: relative;
+    top: 300px;
+    left: 113px;
+}
+
+.socials {
+    padding-right: 30px;
+    position: relative;
+    top: 220px;
+    right: 30px;
+}
+
+.socials a {
+    color: #ffff;
+    padding: 20px;
+}
+
+.footer-links {
+    bottom: 48px;
+    text-align: right;
+    font-family: 'Montserrat', serif;
+    font-size: 15px;
+    padding: 30px;
+    position: relative;
+    right: 230px;
+    color: #ffff;
+}
+
+.footer-links li a {
+    color: #ffff;
+    text-decoration: none;
+}
+
+.footer-links li {
+    padding-top: 15px;
+}

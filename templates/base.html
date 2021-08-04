@@ -73,8 +73,24 @@
 
 <footer class="blue-grey darken-4">
     <div class="row">
-        <div class="footer-contents">
-            <h5>The Communal Kitchen</h5>
+        <div class="footer-title">
+            <h5 class="grey-text text-lighten-4">The Communal Kitchen</h5>
+        </div>
+        <ul class="right footer-links">
+            <li><a href="{{ url_for('get_recipes') }}">Community Recipes</a></li>
+            {% if session.user %}
+            <li><a href="{{ url_for('profile', username=session['user']) }}">My Recipes</a></li>
+            <li><a href="{{ url_for('logout')}}">Log out</a></li>
+            <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+            {% else %}
+            <li><a href="{{ url_for('login') }}">Log In</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+            {% endif %}
+        </ul>
+        <div class="socials right">
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f fa-3x"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-3x"></i></a>
+            <a href="https://twitter.com/?lang=en-gb" target="_blank"><i class="fab fa-twitter fa-3x"></i></a>
         </div>
     </div>
 </footer>
