@@ -168,7 +168,8 @@ th {
     padding: 5px;
     font-family: 'Prata', serif;
     border: none;
-    text-decoration: none;
+    color: #ffff;
+    text-decoration-color: #ffff;
 }
 
 h2 {
@@ -179,10 +180,26 @@ h2 {
     margin: 20px;
 }
 
-form {
-    padding: 30px;
+.remove-field {
+    padding-left: 780px;
+    color: rgb(255, 255, 255);
 }
 
+textarea {
+    color: #ffff;
+}
+
+.card-panel {
+    -webkit-transition: -webkit-box-shadow .25s;
+    transition: -webkit-box-shadow .25s;
+    transition: box-shadow .25s;
+    transition: box-shadow .25s, -webkit-box-shadow .25s;
+    padding: 24px;
+    margin: .5rem 0 1rem 0;
+    border-radius: 2px;
+    background-color: #253237;
+    color: white;
+}
 
 /* ------------------------------------Footer */
 
