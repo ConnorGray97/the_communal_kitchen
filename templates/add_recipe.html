@@ -23,7 +23,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix form-icon"></i>
                     <select name="category_name" id="category_name" class="validate" required>
-                        <option value="" disabled selected>Pick Category</option>
+                        <option value="" disabled selected></option>
                         {% for category in categories %}
                         <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                         {% endfor %}
