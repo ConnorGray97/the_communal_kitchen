@@ -8,43 +8,36 @@
     </div>
 </div>
 
-<!-- Search bar and category filter -->
-<form action="{{ url_for('search') }}" method="POST">
-    <div class="row">
-        <input type="hidden" id="search_site" name="search_site" value="recipes.html">
-        <div class="input-field col m6 l7 offset-l1">
-            <i class="material-icons prefix"></i>
-            <input type="text" name="recipe_search" id="recipe_search">
-            <label for="recipe_search">Search</label>
+<!-- Search bar -->
+<section class="search">
+    <form class="col s12" action="{{ url_for('search') }}" method="POST">
+        <div class="row">
+            <input type="hidden" id="search_site" name="search_site" value="recipes.html">
+            <div class="input-field center-align search">
+                <input type="text" name="recipe_search" id="recipe_search">
+                <label for="recipe_search">Search</label>
+            </div>
         </div>
-        <div class="input-field col s8 offset-s2 m4 l3 right">
-            <select name="category_filter" id="category_filter">
-                <option value="" disabled selected>Filter category</option>
-                {% for category in categories %}
-                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                {% endfor %}
-            </select>
-        </div>
-    </div>
-</form>
-<!-- Search bar and category filter -->
+    </form>
+</section>
+<!-- Search bar -->
 
 
 <div class="row">
     {% for recipe in recipes %}
     <a href="{{ url_for('open_recipe', recipe_id=recipe._id) }}">
-    <div class="cards-section col s12 m6 l4">
-        <div class="card hoverable">
-            <div class="card-image">
-                <img src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
-            </div>
-            <div class="card-content center-align">
-                <span class="blue-grey-text text-darken-4 bold">{{ recipe.recipe_name }}</span>
-                <p class="blue-grey-text text-darken-4">{{ recipe.recipe_description }}</p>
+        <div class="cards-section col s12 m6 l4">
+            <div class="card hoverable">
+                <div class="card-image">
+                    <img src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
+                </div>
+                <div class="card-content center-align">
+                    <span class="blue-grey-text text-darken-4 bold">{{ recipe.recipe_name }}</span>
+                    <p class="blue-grey-text text-darken-4">{{ recipe.recipe_description }}</p>
+                </div>
             </div>
         </div>
-    </div>
-</a>
+    </a>
     {% endfor %}
 </div>
 

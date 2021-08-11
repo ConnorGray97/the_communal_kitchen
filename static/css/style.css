@@ -100,6 +100,11 @@ p {
     height: 20rem;
    
 }
+
+.search {
+    max-width: 800px;
+    margin: 0 auto;
+}
 /* ------------------------------------Community recipes page */
 
 /* ------------------------------------Open recipes page */

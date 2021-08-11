@@ -17,8 +17,6 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-RECIPES_PER_PAGE = 6
-
 
 @app.route("/")
 @app.route("/get_recipes")
