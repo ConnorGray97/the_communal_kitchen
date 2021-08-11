@@ -64,12 +64,49 @@ const appendIngredient = (e) => {
   }
 };
 
+const addNewStep = (e) => {
+  // prevent default action
+  e.preventDefault();
+  // check if step is less than max
+  if (step < maxSteps) {
+      step++;
+      // create new div element
+      let newStepField = document.createElement('div');
+      // set the inner HTML
+      newStepField.innerHTML = `
+  <div class="row recipe-item" id="prep-step">
+      <div class="col s12">
+          <div class="input-field prep_step col s12">
+              <textarea name="prep_step" id="prep_step_1" maxlength="500"></textarea>
+              <label for="prep_step_1">Enter Preparation Step</label>
+          </div>
+      </div>
+  </div>
+  <a href="#" class="remove-step text-shadow"><i class="fas fa-trash-alt fa-2x"></i></a>`;
+      // append to parent element
+      methodRow.append(newStepField);
+  }
+};
+// Delete input field
+
 $(ingredientRow).on('click', '.remove-field', function(e) {
   e.preventDefault();
   $(this).parent('div').remove();
   ingredient--;
 });
 
+$(methodRow).on('click', '.remove-step', function(e) {
+  e.preventDefault();
+  $(this).parent('div').remove();
+  step--;
+});
+
+
+
+//End Delete input field
+
 // Event Listeners
+
+addStep.addEventListener('click', addNewStep);
 
 addIngredient.addEventListener('click', appendIngredient);

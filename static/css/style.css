@@ -185,6 +185,11 @@ h2 {
     color: rgb(255, 255, 255);
 }
 
+.remove-step {
+    padding-left: 780px;
+    color: rgb(255, 255, 255);
+}
+
 textarea {
     color: #ffff;
 }
