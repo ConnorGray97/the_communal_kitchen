@@ -83,6 +83,9 @@ def login():
     return render_template("login.html")
 
 
+# ----------------------------------- Profile
+
+
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
 
@@ -159,6 +162,59 @@ def add_recipe():
 
     categories = mongo.db.categories.find()
     return render_template("add_recipe.html", categories=categories)
+
+
+# ----------------------------------- Edit Recipe
+
+
+@app.route("/edit_recipe.html/<recipe_id>", methods=["GET", "POST"])
+def edit_recipe(recipe_id):
+
+    # Gets all data
+    categories = mongo.db.categories.find()
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    ingredients = recipe['ingredients']
+    prep_steps = recipe['prep_steps']
+
+    # On form submission
+    if request.method == "POST":
+        # Gets all data within arrays
+        ingredient_names = request.form.getlist("ingredient_name")
+        amounts = request.form.getlist("amount")
+        units = request.form.getlist("unit")
+        ingredient = [None] * len(ingredient_names)
+        ingredients = []
+
+        for i in range(len(ingredient_names)):
+
+            ingredient[i] = {
+                "ingredient_name": ingredient_names[i],
+                "amount": amounts[i],
+                "unit": units[i]
+            }
+
+        prep_steps = request.form.getlist("prep_step")
+
+        recipe_edit = {
+            "username": session["user"],
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_description": request.form.get("recipe_description"),
+            "category_name": request.form.get("category_name"),
+            "ingredients": ingredients,
+            "prep_steps": prep_steps,
+            "image_url": request.form.get("image_url")
+        }
+
+        mongo.db.recipes.replace_one(recipe, recipe_edit)
+        flash("Your recipe has successfully been updated")
+
+        return redirect(url_for("profile"))
+
+    return render_template("edit_recipe.html",
+                           categories=categories,
+                           recipe=recipe,
+                           ingredients=ingredients,
+                           prep_steps=prep_steps)
 
 
 # ----------------------------------- Search Functionality
