@@ -12,13 +12,16 @@ $(document).ready(function () {
 
 // ------------------------ End Materialize Initialization
 
+$(document).ready(function () {
+  $('flashes').delay(5000).slideUp(300);
+});
 
 // Credit: 
 // Code inspired from https://github.com/rebeccatraceyt/bake-it-til-you-make-it/blob/master/static/js/recipe.js
 
 
 let maxIngredients = 30;
-let ingredientRow = document.getElementById('ingredient-row');
+let ingredientRow = document.getElementById('ingredient');
 let addIngredient = document.getElementById('add-ingredient');
 let ingredient = 1;
 
@@ -36,23 +39,26 @@ const appendIngredient = (e) => {
     ingredient++;
     let newIngredientField = document.createElement('div');
     newIngredientField.innerHTML = `
-    
-      <div class="input-field col s12 m8 l8">
-          <input id="ingredient_name_1" name="ingredient_name" type="text" maxlength="100">
-          <label for="ingredient_name_1">Ingredient</label>
-      </div>
-      <!-- Amount -->
-      <div class="input-field col s4 m1 l2">
-          <input id="amount_1" type="text" maxlength="10">
-          <label for="amount_1">Amount</label>
-      </div>
-      <!-- Unit -->
-      <div class="input-field col s4 m1 l2 right">
-          <input id="unit_1" type="text" maxlength="10">
-          <label for="unit_1">Unit</label>
-      </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="ingredient_name_1" name="ingredient_name" type="text">
+                        <label for="ingredient_name_1">Ingredient</label>
+                    </div>
+                </div>
+                <!-- Amount -->
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="amount_1" name="amount" type="text">
+                        <label for="amount_1">Amount</label>
+                    </div>
+                    <!-- Unit -->
+                    <div class="input-field col s6 m6">
+                        <input id="unit_1" type="text" name="unit">
+                        <label for="unit_1">Unit</label>
+                    </div>
+                </div>
       
-      <a href="#" class="remove-field text-shadow"><i class="fas fa-trash-alt fa-2x"></i></a>
+      <a href="#" class="remove-field text-shadow right"><i class="fas fa-trash-alt fa-2x"></i></a>
       
   `;
     ingredientRow.append(newIngredientField);
@@ -66,11 +72,11 @@ const addNewStep = (e) => {
   e.preventDefault();
   // check if step is less than max
   if (step < maxSteps) {
-      step++;
-      // create new div element
-      let newStepField = document.createElement('div');
-      // set the inner HTML
-      newStepField.innerHTML = `
+    step++;
+    // create new div element
+    let newStepField = document.createElement('div');
+    // set the inner HTML
+    newStepField.innerHTML = `
   <div class="row recipe-item" id="prep-step">
       <div class="col s12">
           <div class="input-field prep_step col s12">
@@ -79,20 +85,20 @@ const addNewStep = (e) => {
           </div>
       </div>
   </div>
-  <a href="#" class="remove-step text-shadow"><i class="fas fa-trash-alt"></i></a>`;
-      // append to parent element
-      methodRow.append(newStepField);
+  <a href="#" class="remove-step text-shadow center-align right"><i class="fas fa-trash-alt fa-2x"></i></a>`;
+    // append to parent element
+    methodRow.append(newStepField);
   }
 };
 // Delete input field
 
-$(ingredientRow).on('click', '.remove-field', function(e) {
+$(ingredientRow).on('click', '.remove-field', function (e) {
   e.preventDefault();
   $(this).parent('div').remove();
   ingredient--;
 });
 
-$(methodRow).on('click', '.remove-step', function(e) {
+$(methodRow).on('click', '.remove-step', function (e) {
   e.preventDefault();
   $(this).parent('div').remove();
   step--;

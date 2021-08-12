@@ -8,11 +8,11 @@
         </div>
     </div>
     <div class="row new-recipe">
-        <form method="POST" action="{{ url_for('add_recipe') }}" class="recipe-form col card-panel m12 l10 offset-l1">
+        <form method="POST" action="{{ url_for('add_recipe') }}" class="recipe-form col s12 m10 offset-m1 l10 offset-l1">
             <!-- Recipe name input -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fa-pencil alt prefix form-icon"></i>
+                    <i class="fas fa-pencil-alt prefix form-icon"></i>
                     <input name="recipe_name" id="recipe_name" maxlength="100" type="text" class="validate" required>
                     <label for="recipe_name">Recipe Name</label>
                 </div>
@@ -52,32 +52,43 @@
             </div>
             <!-- Add image url -->
             <!-- Add ingredient list -->
-            <div class="row">
-                    <div class="input-field col s12 m8 l8">
+            <div id="ingredient">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-utensils prefix form-icon"></i>
                         <input id="ingredient_name_1" name="ingredient_name" type="text">
                         <label for="ingredient_name_1">Ingredient</label>
                     </div>
-                    <!-- Amount -->
-                    <div class="input-field col s4 m1 l2 right">
+                </div>
+                <!-- Amount -->
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="fas fa-balance-scale-right prefix form-icon"></i>
                         <input id="amount_1" name="amount" type="text">
                         <label for="amount_1">Amount</label>
                     </div>
                     <!-- Unit -->
-                    <div class="input-field col s4 m1 l2 right">
+                    <div class="input-field col s6">
+                        <i class="fas fa-balance-scale-right prefix form-icon"></i>
                         <input id="unit_1" type="text" name="unit">
-                        <label for="unit_1">Unit</label>
-                    </div>
-
-                <!-- Add Button -->
-                <div class="row">
-                    <div class="col s12 center-align add-ing">
-                        <button id="add-ingredient" class="btn" type="button">Add Ingredient
-                            <i class="material-icons right"></i>
-                        </button>
+                        <label for="unit_1">Unit Type</label>
                     </div>
                 </div>
-
             </div>
+
+
+
+
+            <!-- Add Button -->
+            <div class="row">
+                <div class="col s12 center-align add-ing">
+                    <button id="add-ingredient" class="btn" type="button">Add Ingredient
+                        <i class="material-icons right"></i>
+                    </button>
+                </div>
+            </div>
+
+
             <!-- Add ingredient list -->
             <!-- Add Prep Steps -->
             <div class="row recipe-item" id="prep-step">
