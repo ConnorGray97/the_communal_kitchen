@@ -35,7 +35,7 @@
             <!-- Add recipe description -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-folder-open prefix form-icon"></i>
+                    <i class="fas fa-pencil-alt prefix form-icon"></i>
                     <textarea name="recipe_description" id="recipe_description" maxlength="300" class="validate"
                         required></textarea>
                     <label for="recipe_description">Describe Your Recipe</label>
@@ -53,22 +53,21 @@
             <!-- Add image url -->
             <!-- Add ingredient list -->
             <div class="row">
-                <div id="ingredient-row">
                     <div class="input-field col s12 m8 l8">
-                        <input id="ingredient_name_1" name="ingredient_name" type="text" maxlength="100">
+                        <input id="ingredient_name_1" name="ingredient_name" type="text">
                         <label for="ingredient_name_1">Ingredient</label>
                     </div>
                     <!-- Amount -->
                     <div class="input-field col s4 m1 l2 right">
-                        <input id="amount_1" type="text" maxlength="10">
+                        <input id="amount_1" name="amount" type="text">
                         <label for="amount_1">Amount</label>
                     </div>
                     <!-- Unit -->
                     <div class="input-field col s4 m1 l2 right">
-                        <input id="unit_1" type="text" maxlength="10">
+                        <input id="unit_1" type="text" name="unit">
                         <label for="unit_1">Unit</label>
                     </div>
-                </div>
+
                 <!-- Add Button -->
                 <div class="row">
                     <div class="col s12 center-align add-ing">

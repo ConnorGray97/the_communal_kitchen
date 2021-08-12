@@ -2,6 +2,7 @@ body {
     padding: 0%;
 }
 
+
 /* ------------------------------------Nav */
 .nav-wrapper {
     font-family: 'Prata', serif;
@@ -168,8 +169,8 @@ th {
     padding: 5px;
     font-family: 'Prata', serif;
     border: none;
-    color: #ffff;
-    text-decoration-color: #ffff;
+    color: #253237;
+    text-decoration-color: #253237;
 }
 
 h2 {
@@ -182,12 +183,12 @@ h2 {
 
 .remove-field {
     padding-left: 780px;
-    color: rgb(255, 255, 255);
+    color: #253237;
 }
 
 .remove-step {
     padding-left: 780px;
-    color: rgb(255, 255, 255);
+    color: #253237;
 }
 
 .remove-field:hover {
@@ -199,7 +200,7 @@ h2 {
 }
 
 textarea {
-    color: #ffff;
+    color: #253237;
 }
 
 .card-panel {
@@ -210,8 +211,12 @@ textarea {
     padding: 24px;
     margin: .5rem 0 1rem 0;
     border-radius: 2px;
-    background-color: #253237;
-    color: white;
+    background-color: #d0dde2;
+    color: #253237;
+}
+
+.input-field>label {
+    color: #253237;
 }
 
 /* ------------------------------------Footer */

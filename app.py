@@ -134,7 +134,7 @@ def add_recipe():
                 "unit": units[i]
             }
 
-            ingredients.append(ingredients[i])
+            ingredients.append(ingredient[i])
 
         prep_steps = request.form.getlist("prep_step")
 

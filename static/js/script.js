@@ -82,7 +82,7 @@ const addNewStep = (e) => {
           </div>
       </div>
   </div>
-  <a href="#" class="remove-step text-shadow"><i class="fas fa-trash-alt fa-2x"></i></a>`;
+  <a href="#" class="remove-step text-shadow"><i class="fas fa-trash-alt"></i></a>`;
       // append to parent element
       methodRow.append(newStepField);
   }
