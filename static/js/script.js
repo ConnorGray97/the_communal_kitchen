@@ -12,9 +12,6 @@ $(document).ready(function () {
 
 // ------------------------ End Materialize Initialization
 
-$(document).ready(function(){
-  $('flashes').delay(5000).slideUp(300);
-});
 
 // Credit: 
 // Code inspired from https://github.com/rebeccatraceyt/bake-it-til-you-make-it/blob/master/static/js/recipe.js
