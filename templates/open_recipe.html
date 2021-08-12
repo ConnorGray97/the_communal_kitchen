@@ -7,9 +7,11 @@
             <div class="recipe-title center-align">
                 <h2>{{ recipe.recipe_name }}</h2>
             </div>
+            
             <div class="col s12">
                     <div class="col s12 push-m6 m6 push-l6 l6 recipe-image">
                         <img src="{{ recipe.image_url }}" alt="">
+                        <span class="made-by right">By: {{ recipe.username }}</span>
                     </div>
                     <div class="col s12 pull-m6 m6 pull-l6 l6">
                         <div class="row border">
