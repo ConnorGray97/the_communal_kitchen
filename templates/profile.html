@@ -10,6 +10,62 @@
     </div>
 </div>
 
+<!-- Search bar -->
+<section class="search">
+    <form class="col s12" action="{{ url_for('search') }}" method="POST">
+        <div class="row">
+            <input type="hidden" id="search_site" name="search_site" value="recipes.html">
+            <div class="input-field center-align search">
+                <input type="text" name="recipe_search" id="recipe_search">
+                <label for="recipe_search">Search</label>
+            </div>
+        </div>
+    </form>
+</section>
+<!-- Search bar -->
+
+<div class="row">
+    <div class="col s12">
+        <h5 class="center-align profile-heading">
+            My recipes
+        </h5>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_recipe') }}" class="btn-add-recipe text-shadow">Add Recipe <i
+                class="fas fa-plus-square"></i></a>
+    </div>
+</div>
+
+<section class="profile">
+    <div class="row">
+        {% if recipes|length == 0 %}
+        <div class="col s12 center-align">
+            <h5>Hi {{ username }} you have not yet shared a recipe!<br>Press the plus to get started.</h5>
+        </div>
+        {% else %}
+        {% for recipe in recipes %}
+        <a href="{{ url_for('open_recipe', recipe_id=recipe._id) }}">
+            <div class="cards-section col s12 m6 l4">
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <img src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
+                    </div>
+                    <div class="card-content center-align">
+                        <span class="blue-grey-text text-darken-4 bold">{{ recipe.recipe_name }}</span>
+                        <p class="blue-grey-text text-darken-4">{{ recipe.recipe_description }}</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+</section>
+
 
 
 

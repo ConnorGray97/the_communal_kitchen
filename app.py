@@ -85,12 +85,15 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # Grab session username from the db
+
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    recipes = list(mongo.db.recipes.find(
+        {"username": session["user"]}))
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template(
+            "profile.html", username=username, recipes=recipes)
 
     return redirect(url_for("login"))
 
@@ -156,6 +159,7 @@ def add_recipe():
 
     categories = mongo.db.categories.find()
     return render_template("add_recipe.html", categories=categories)
+
 
 # ----------------------------------- Search Functionality
 
