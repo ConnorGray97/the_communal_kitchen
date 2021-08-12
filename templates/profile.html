@@ -57,6 +57,7 @@
                         <span class="blue-grey-text text-darken-4 bold">{{ recipe.recipe_name }}</span>
                         <p class="blue-grey-text text-darken-4">{{ recipe.recipe_description }}</p>
                     </div>
+                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"><i class="edit-pencil fas fa-pencil-alt fa-2x"></i></a>
                 </div>
             </div>
         </a>

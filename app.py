@@ -89,10 +89,11 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
 
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    recipes = list(mongo.db.recipes.find(
-        {"username": session["user"]}))
+    if session.get("user"):
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        recipes = list(mongo.db.recipes.find(
+            {"username": session["user"]}))
 
     if session["user"]:
         return render_template(
