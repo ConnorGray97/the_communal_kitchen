@@ -40,6 +40,11 @@
 
 - When on My Recipes page, on each recipe card there is a pencil icon. When user clicks on it the user is redirected to the same form but with the existing details that can then be updated and saved as desired. Once the updated form is submitted the user is redirected to the recipe they just made changes to.
 
+### Delete my own recipies
+
+- This can be achieved through the bin icon in the recipe cards on the profile page. Deletion is confirmed with a flash message.
+<img src="readme-images/delete.png" alt="drawing" width="300"/>
+
 <img src="readme-images/recipeupdate.png" alt="drawing" width="300"/>
 
 
@@ -112,3 +117,9 @@ Opera|Yes|Yes|None
 Chrome|Yes|Yes|None
 Edge|Yes|Yes|None
 Firefox|Yes|Yes|None
+
+# Bugs Encoutered
+
+- After a srecipe was edited the profile.html page wouldn't render so I redirected to render the open_recipe.html - [Bug Fix](https://github.com/ConnorGray97/the_communal_kitchen/commit/16359543771391fb978ab928a2ebc09e1493e4f0)
+
+- When adding a new user one of the input fields was returning as None. The issue was a small typo in the HTML - [Bug Fix](https://github.com/ConnorGray97/the_communal_kitchen/commit/50ecce8bb0a8be919e71d3317a7002ef1a74eaa9)
