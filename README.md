@@ -63,3 +63,95 @@
     - Jpeg Optimizer was used to compress the hero image to usable size.
 1. [dbdiagram](https://dbdiagram.io/)
     - To design the database schema.
+
+# Deployment and cloning
+
+### Clone this repository:
+### In linux:
+To find the link, go to the "code" dropdown menu in this repository.
+Click the clipboard icon next to the url.
+In your terminal type:
+
+```
+$mkdir <jour project directory>
+$git init <jour project directory> (to set up a new repository)
+$git clone https://github.com/JorisPaarde/my-vegan-recipes.git
+```
+
+In Windows:
+
+follow [these](https://www.jcchouinard.com/clone-github-repository-on-windows/) steps.
+
+Install all requirements through the requirements.txt file:
+```
+pip install -r requirements.txt
+```
+
+### Create your account for MongoDB here: https://account.mongodb.com/account/register
+
+When u are logged in:
+
+- Go to clusters and click create database.
+
+- Enter your database name.
+
+- As your first collection name enter users.
+
+- Click the plus sign next to your new database name to add the collections recipes and categories.
+
+- Insert the categories documents as shown in the [database design](#database-in-mongo-db)
+
+Documents for users and recipes can then be added trough the site or directly in mongo db as shown in the database design.
+
+Your database is now ready for use.
+
+### Create your env.py file:
+```
+$touch env.py
+```
+
+Make sure u add this env.py file to your gitignore file!
+Add the folowing code to your env.py file:
+
+```python
+import os
+
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", "<YOUR-SECRET-KEY-HERE>")
+os.environ.setdefault("MONGO_URI", "mongodb+srv://root:<MONODBPASSWORD>@cluster0.ajvr3.mongodb.net/<DATABASENAME>?retryWrites=true&w=majority")
+os.environ.setdefault("MONGO_DBNAME", "<DATABASENAME>")
+```
+Replace YOUR-SECRET-KEY-HERE, MONGODBPASSWORD, DATABASENAME according to your personal situation.
+
+### To retrieve your mongodb pasword: 
+
+Go to database access, click edit and show password:
+
+![mongodb password](readme-images/mongopassword.png)
+
+Your local clone is now ready for use.
+
+## To deploy this project on Heroku: 
+
+- Create your account on Heroku here: https://signup.heroku.com/login
+
+- Create a new app on heroku:
+
+- Go to: https://dashboard.heroku.com/apps
+select new, create new app from the dropdown menu on the right.
+Enter your app-name and region and click create app.
+Under delpoyment method, select github.
+
+![Connect to Github](readme-images/herokuconnect.png)
+
+- Select your repository and connect.
+
+- Go to settings, config vars and enter the variables also located in your env.py file.
+
+![Config vars](readme-images/configvars.png)
+
+- Go to deploy and at the bottom of the page manually deploy your main github branch
+
+Your app is now deployed and ready to run.
+At the top of th epage click open app to run it.

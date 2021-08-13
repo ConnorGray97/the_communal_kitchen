@@ -172,11 +172,6 @@ h2 {
     margin: 20px;
 }
 
-/* .remove-field {
-    padding-left: 780px;
-    color: #253237;
-} */
-
 .remove-field {
     color: #253237;
 }
@@ -197,19 +192,6 @@ textarea {
     color: #253237;
 }
 
-
-
-/* .card-panel {
-    -webkit-transition: -webkit-box-shadow .25s;
-    transition: -webkit-box-shadow .25s;
-    transition: box-shadow .25s;
-    transition: box-shadow .25s, -webkit-box-shadow .25s;
-    padding: 80px;
-    margin: .5rem 0 1rem 0;
-    border-radius: 2px;
-    background-color: #d0dde2;
-    color: #253237;
-} */
 
 .input-field>label {
     color: #253237;
