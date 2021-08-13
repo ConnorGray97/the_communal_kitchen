@@ -118,9 +118,9 @@ Chrome|Yes|Yes|None
 Edge|Yes|Yes|None
 Firefox|Yes|Yes|None
 
-## Manual Testing
+# Manual Testing
 
-#### Testing Navigation
+## Testing Navigation
 
 If user is in session:
 
@@ -175,6 +175,107 @@ If user is not in session:
         <td>When clicked on Add recipe in profile page, the user is directed to a form to add the recipe</td>
         <td>Pass</td>
     </tr>
+</table>
+
+## Testing Forms
+
+- Register Form
+
+ <table>
+    <tr>
+        <th>Test</th>
+        <th>Expected Outcome</th>
+        <th>Result</th>
+    </tr>
+    <tr>
+        <td>Create Username Field</td>
+        <td>If user submits a blank or invalid field is it required and are they informed with a flash message.
+        </td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Create Password</td>
+        <td>If user submits a blank or invalid field is it required and are they informed with a flash message.
+        </td>
+        <td>Pass</td>
+    </tr>
+     <tr>
+        <td>Submit</td>
+        <td>The form is submitted and the correct flash messages appear.
+        </td>
+        <td>Pass</td>
+    </tr>
+
+</table>
+
+- Login Form
+
+ <table>
+    <tr>
+        <th>Test</th>
+        <th>Expected Outcome</th>
+        <th>Result</th>
+    </tr>
+    <tr>
+        <td>Username Field</td>
+        <td>Checks for invalid or valid field and outputs appropriate flash messages
+        </td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td>Checks for invalid or valid field and outputs appropriate flash messages
+        </td>
+        <td>Pass</td>
+    </tr>
+     <tr>
+        <td>Submit</td>
+        <td>User is logged in once all fields are correct.
+        </td>
+        <td>Pass</td>
+    </tr>
+
+</table>
+
+- Add Recipe form
+
+ <table>
+    <tr>
+        <th>Test</th>
+        <th>Expected Outcome</th>
+        <th>Result</th>
+    </tr>
+    <tr>
+        <td>Recipe Name</td>
+        <td>Checks for invalid or valid field and outputs appropriate flash messages
+        </td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Recipe Description</td>
+        <td>Checks for invalid or valid field and outputs appropriate flash messages
+        </td>
+        <td>Pass</td>
+    </tr>
+     <tr>
+        <td>Recipe Category</td>
+        <td>Dropdown with category options
+        </td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Ingredients</td>
+        <td>Appends new line once an ingredient is added.
+        </td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Prep Steps</td>
+        <td>Appends new line once step is added.
+        </td>
+        <td>Pass</td>
+    </tr>
+
 </table>
 
 # Bugs Encoutered
