@@ -89,6 +89,10 @@ As a first time user i want to:
 1. [dbdiagram](https://dbdiagram.io/)
     - To design the database schema.
 
+# Testing
+
+All testing can be found [here](TESTING.md).
+
 # Deployment and cloning
 
 ### Clone this repository:
