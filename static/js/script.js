@@ -20,15 +20,15 @@ $(document).ready(function () {
 // Code inspired from https://github.com/rebeccatraceyt/bake-it-til-you-make-it/blob/master/static/js/recipe.js
 
 
-let maxIngredients = 30;
-let ingredientRow = document.getElementById('ingredient');
-let addIngredient = document.getElementById('add-ingredient');
-let ingredient = 1;
+var maxIngredients = 30;
+var ingredientRow = document.getElementById('ingredient');
+var addIngredient = document.getElementById('add-ingredient');
+var ingredient = 1;
 
-let maxSteps = 30;
-let methodRow = document.getElementById('prep-step');
-let addStep = document.getElementById('add-step');
-let step = 1;
+var maxSteps = 30;
+var methodRow = document.getElementById('prep-step');
+var addStep = document.getElementById('add-step');
+var step = 1;
 
 // Append new ingredient div
 
@@ -37,7 +37,7 @@ const appendIngredient = (e) => {
 
   if (ingredient < maxIngredients) {
     ingredient++;
-    let newIngredientField = document.createElement('div');
+    var newIngredientField = document.createElement('div');
     newIngredientField.innerHTML = `
                 <div class="row">
                     <div class="input-field col s12">
@@ -74,7 +74,7 @@ const addNewStep = (e) => {
   if (step < maxSteps) {
     step++;
     // create new div element
-    let newStepField = document.createElement('div');
+    var newStepField = document.createElement('div');
     // set the inner HTML
     newStepField.innerHTML = `
   <div class="row recipe-item" id="prep-step">
