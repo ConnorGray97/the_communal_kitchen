@@ -1,7 +1,7 @@
+# The Communal Kitchen
 
-
-
-
+![The Communal Kitchen mockup image](readme-images/preview.png)
+[View the live site here](https://the-communal-kitchen.herokuapp.com/)
 
 
 # User experience (ux)
@@ -179,4 +179,4 @@ Under delpoyment method, select github.
 - Go to deploy and at the bottom of the page manually deploy your main github branch
 
 Your app is now deployed and ready to run.
-At the top of th epage click open app to run it.
+At the top of the page click open app to run it.
