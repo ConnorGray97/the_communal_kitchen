@@ -278,12 +278,32 @@ footer {
 }
 
 /* ------------------------------------Media Queries */
+@media only screen and (max-width: 769px) {
+
+    .input-field {
+        width: 400px;
+    }
+
+    .card {
+        padding: 15px;
+        margin: 15px;
+    }
+
+
+}
 
 @media only screen and (max-width: 420px) {
     h2 {
         font-size: 1.56rem;
         line-height: 112%;
     }
+
+    h1 {
+        font-size: 3.2rem;
+    }
+
+  
+
     .recipe-wrapper {
         padding: 11px;
     }
@@ -295,8 +315,42 @@ footer {
     }
 
     .input-field {
-        display: inline-block;
+        width: 220px;
     }
+
+    .card {
+        padding: 18px;
+        margin: 20px;
+    }
+
+    .footer-links {
+        right: 0;
+    }
+
+    .socials {
+        right: 0;
+    }
+
+    .log-in {
+        padding: 12px;
+    }
+
+    .register {
+        padding: 8px;
+    }
+
+    .flashes h4 {
+        width: 250px;
+    }
+
+    .recipe-image img {
+        max-height: 250px;
+    
+    }
+    
+    
+
+
 }
 
 /* ------------------------------------End Media Queries */
