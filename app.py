@@ -281,6 +281,8 @@ def search():
         return render_template(current_site, recipes=recipes,
                                categories=categories, search=search)
 
+# ----------------------------------- Log Out
+
 
 @app.route("/logout")
 def logout():

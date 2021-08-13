@@ -1,3 +1,24 @@
+
+
+
+
+
+
+
+
+## Wireframes
+
+### Desktop
+
+![Wireframes](readme-images/wireframe1.png)
+![Wireframes](readme-images/wireframe2.png)
+![Wireframes](readme-images/wireframe3.png)
+
+### Mobile
+
+![Wireframes](readme-images/wireframe4.png)
+
+
 # Technologies Used
 
 ### Languages Used
