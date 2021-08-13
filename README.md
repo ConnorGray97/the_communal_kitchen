@@ -1,5 +1,7 @@
 # The Communal Kitchen
 
+## An online platform for home cooks to share and view their favourite recipes.<br>
+
 ![The Communal Kitchen mockup image](readme-images/preview.png)
 [View the live site here](https://the-communal-kitchen.herokuapp.com/)
 
@@ -19,7 +21,7 @@ As a first time user i want to:
 - Be able to search recipes by ingredient and recipe name.
 
 
-### Recurring user:
+### Returning user:
 
 - Log back into my pre registered account
 - Add my own recipies using an intuitive form.
@@ -42,6 +44,10 @@ As a first time user i want to:
 ### Mobile
 
 ![Wireframes](readme-images/wireframe4.png)
+
+# Data Schema
+
+![DataSchema](readme-images/dataschema.png)
 
 
 # Technologies Used
@@ -124,9 +130,9 @@ When u are logged in:
 
 - Enter your database name.
 
-- As your first collection name enter users.
+- Enter users.
 
-- Click the plus sign next to your new database name to add the collections recipes and categories.
+- Next to your new database name, click the plus sign to add the collections recipes and categories.
 
 - Insert the categories documents as shown in the [database design](#database-in-mongo-db)
 
@@ -184,3 +190,18 @@ Under delpoyment method, select github.
 
 Your app is now deployed and ready to run.
 At the top of the page click open app to run it.
+
+# Credits
+
+## Recipes
+
+- https://www.gordonramsay.com/gr/recipes/
+
+## Photos
+
+- https://unsplash.com/
+
+## Code
+
+- https://github.com/TravelTimN/flask-task-manager-project/blob/demo/app.py
+- https://github.com/rebeccatraceyt/bake-it-til-you-make-it/blob/master/static/js/recipe.js
