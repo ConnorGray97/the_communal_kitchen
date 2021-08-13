@@ -278,6 +278,10 @@ If user is not in session:
 
 </table>
 
+## I tested every page of the site extensively for responsivitiy on numerous device sizes.
+
+
+
 # Bugs Encoutered
 
 - After a srecipe was edited the profile.html page wouldn't render so I redirected to render the open_recipe.html - [Bug Fix](https://github.com/ConnorGray97/the_communal_kitchen/commit/16359543771391fb978ab928a2ebc09e1493e4f0)
