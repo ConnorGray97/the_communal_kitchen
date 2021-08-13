@@ -118,6 +118,65 @@ Chrome|Yes|Yes|None
 Edge|Yes|Yes|None
 Firefox|Yes|Yes|None
 
+## Manual Testing
+
+#### Testing Navigation
+
+If user is in session:
+
+<table>
+    <tr>
+        <th>Test</th>
+        <th>Expected Outcome</th>
+        <th>Result</th>
+    </tr>
+    <tr>
+        <td>Community Recipes</td>
+        <td>When clicked on Community Recipes, takes us to the page to view all users recipes</td>
+        <td>Pass</td>
+    </tr>
+     <tr>
+        <td>Login</td>
+        <td>When clicked on Login, takes us to Login page</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Register</td>
+        <td>When clicked on Register, takes us to Register page</td>
+        <td>Pass</td>
+    </tr>
+</table>
+
+If user is not in session:
+
+<table>
+    <tr>
+        <th>Test</th>
+        <th>Expected Outcome</th>
+        <th>Result</th>
+    </tr>
+    <tr>
+        <td>Community Recipes</td>
+        <td>When clicked on Community Recipes, takes us to the page to view all users recipes</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>My Recipes</td>
+        <td>When clicked on My Recipes, takes us to the page to view the users recipes only</td>
+        <td>Pass</td>
+    </tr>
+     <tr>
+        <td>Login Out</td>
+        <td>When clicked on Log Out, the user is logged out of the page</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Add Recipe In profile Page</td>
+        <td>When clicked on Add recipe in profile page, the user is directed to a form to add the recipe</td>
+        <td>Pass</td>
+    </tr>
+</table>
+
 # Bugs Encoutered
 
 - After a srecipe was edited the profile.html page wouldn't render so I redirected to render the open_recipe.html - [Bug Fix](https://github.com/ConnorGray97/the_communal_kitchen/commit/16359543771391fb978ab928a2ebc09e1493e4f0)
