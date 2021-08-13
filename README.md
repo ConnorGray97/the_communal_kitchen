@@ -4,6 +4,31 @@
 
 
 
+# User experience (ux)
+
+## User stories:
+
+### First time user:
+
+As a first time user i want to:
+
+- Understand the use of the site and what it is about.
+- Register an account
+- View recipies other people posted
+- Open recipe cards to reveal the full recipe and steps
+- Be able to search recipes by ingredient and recipe name.
+
+
+### Recurring user:
+
+- Log back into my pre registered account
+- Add my own recipies using an intuitive form.
+- Once recipes have been added be able to make updates to my pre exisiting recipes
+- Delete my own recipies.
+
+## Design
+
+### Color scheme 
 
 
 ## Wireframes
