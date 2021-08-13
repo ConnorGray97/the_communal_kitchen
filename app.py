@@ -89,11 +89,8 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
 
-    if session.get("user"):
-        username = mongo.db.users.find_one(
-            {"username": session["user"]})["username"]
-        recipes = list(mongo.db.recipes.find(
-            {"username": session["user"]}))
+    recipes = list(mongo.db.recipes.find(
+        {"username": session["user"]}))
 
     if session["user"]:
         return render_template(
@@ -208,8 +205,9 @@ def edit_recipe(recipe_id):
 
         mongo.db.recipes.replace_one(recipe, recipe_edit)
         flash("Your recipe has successfully been updated")
+        return redirect(url_for("open_recipe", recipe_id=recipe_id))
 
-        return redirect(url_for("profile"))
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
 
     return render_template("edit_recipe.html",
                            categories=categories,
