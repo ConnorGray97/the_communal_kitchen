@@ -215,6 +215,15 @@ def edit_recipe(recipe_id):
                            ingredients=ingredients,
                            prep_steps=prep_steps)
 
+# ----------------------------------- Edit Recipe
+
+
+@app.route("/delete_recipe/<recipe_id>", methods=["GET", "POSt"])
+def delete_recipe(recipe_id):
+    flash("Recipe deleted.")
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    return redirect(url_for("profile", username=session["user"]))
+
 
 # ----------------------------------- Search Functionality
 

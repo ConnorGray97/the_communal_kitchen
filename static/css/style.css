@@ -106,6 +106,11 @@ p {
     max-width: 800px;
     margin: 0 auto;
 }
+
+.made-by {
+    color: #253237;
+}
+
 /* ------------------------------------Community recipes page */
 
 /* ------------------------------------Open recipes page */
@@ -208,6 +213,38 @@ textarea {
 
 .input-field>label {
     color: #253237;
+}
+
+/* ------------------------------------Profile */
+
+h5 {
+    font-family: 'Prata', serif;
+}
+
+.edit-pencil{
+    color: #253237;
+}
+
+.edit-pencil:hover {
+    color: #2f7f9e;
+}
+
+.btn-add-recipe {
+    color: #253237;
+    border: 1px solid;
+    padding: 10px;
+}
+
+.btn-add-recipe:hover {
+    color: green;
+}
+
+.delete-recipe {
+    color: rgb(131, 31, 31);
+}
+
+.delete-recipe:hover {
+    color: #2f7f9e;
 }
 
 /* ------------------------------------Footer */
