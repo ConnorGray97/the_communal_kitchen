@@ -5,6 +5,16 @@
 ![The Communal Kitchen mockup image](readme-images/preview.png)
 [View the live site here](https://the-communal-kitchen.herokuapp.com/)
 
+# Table of contents
+
+- [User stories](#user-stories)
+- [Design](#design)
+- [Mockup](#mockup)
+- [Technologies Used](#technologies-used)
+- [Testing](#testing)
+- [Deployment](#deployment-and-cloning)
+- [Credits](#credits)
+
 
 # User experience (ux)
 
@@ -33,7 +43,7 @@ As a first time user i want to:
 ### Color scheme 
 
 
-## Wireframes
+## Mockup
 
 ### Desktop
 
