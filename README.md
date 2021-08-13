@@ -42,6 +42,12 @@ As a first time user i want to:
 
 ### Color scheme 
 
+![Color Scheme](readme-images/colorscheme.png)
+
+### Fonts
+
+The two fonts used were from google fonts the main one being 'Prata' with serif being used as a backup and the second one being 'Montserrat' with sans serif being used as a back up.
+
 
 ## Mockup
 
