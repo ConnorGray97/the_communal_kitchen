@@ -53,6 +53,12 @@ No issues besides the expected Jinja errors.
 
 No issues besides the expected Jinja errors.
 
+<br>
+
+## For python validation [pep8online](http://pep8online.com/) was used.
+![PEP8 results](readme-images/PEP8-result.png)
+
+
 # Browser testing
 
 Browser|layout correct|functionality correct|Issues
